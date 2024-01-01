@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/style.css">
+        <script src="https://kit.fontawesome.com/ad22e22b5a.js" crossorigin="anonymous"></script>
+        <title>SML Web Development</title>
+    </head>
+    <body>
+        <header class="nav-menu top-header">
+            <div class="container">
+                <div class="nav-brand">
+                    <div class="logo-name"><a href="./index.html">SML Web Development</a></div>
+                </div>
+
+                <nav class="main-nav">
+                    <button class="hamburger" aria-expanded="false">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="menu">
+                        <ul class="menu-bar">
+                            <li class="nav-link"><a href="index.html">HOME</a></li>
+                            <li class="nav-link"><a href="portfolio.html">PORTFOLIO</a></li>
+                            <li>
+                                <button class="nav-link dropdown-btn" data-dropdown="dropdown" aria-expanded="false">
+                                    PLANS
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                                <div class="dropdown" id="dropdown">
+                                    <ul>
+                                        <li class="nav-link"><a href="wordpress-plans.html">WordPress</a></li>
+                                        <li class="nav-link"><a href="custom-code-plans.html">Custom Site</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-link"><a href="contact-page.html">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+
+        <script src="./scripts/custom.js"></script>
+    </body>
+</html>

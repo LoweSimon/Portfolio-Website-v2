@@ -1,0 +1,489 @@
+:root {
+    --text-color: #010101;
+    --background: #f8f8f7;
+    color: #767676;
+    color: #bcbcbb;
+    --primary-color: #44195e;
+    --primary-text: #fc6601;
+    color: #ef955d;
+    color: #924518;
+    --primary-container: linear-gradient(180deg, #44195E 0%, rgba(129, 73, 167, 0.89) 100%);
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    background: var(--background);
+    font-family: 'Roboto Slab', serif;
+    height: auto;
+    width: 100%;
+    min-height: 100%;
+}
+
+h1,h2,h3,h4,h5,h6,p,span,a {
+  color: var(--primary-text);
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--background);
+}
+
+.wrapper {
+  border: 1px solid black;
+  width: auto;
+}
+
+/* Added for debugging needs, remove once complete */
+div,header {
+  border: 1px solid red;
+}
+section {
+  border: 1px solid blue;
+  max-width: 1600px;
+  padding: 1.2rem 3rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+.top-header {
+    height: 683px;
+    flex-shrink: 0;
+    background: var(--primary-container);
+    border-radius: 0 0 30px 30px;
+}
+
+/* Navbar Styling */
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-text);
+}
+
+.nav-brand {
+  float: left;
+}
+
+.dropdown-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--primary-text);
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.nav-menu {
+    border-bottom: var(--text-color);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1600px;
+    margin: 0 auto;
+    column-gap: 2rem;
+    height: 90px;
+}
+
+.menu {
+    position: relative;
+}
+
+.menu-bar {
+    display: flex;
+}
+
+.nav-link {
+    padding-left: 75px;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    min-width: 230px;
+    border-radius: 10px;
+    position: absolute;
+    top: 36px;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.97) translateX(-5px);
+    transition: 0.1s ease-in-out;
+}
+
+.dropdown.active {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1) translateX(5px);
+}
+
+.dropdown ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.2rem;
+    font-size: 0.95rem;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.15rem;
+  }
+  
+  .dropdown-link {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-radius: 7px;
+    transition: 0.1s ease-in-out;
+  }
+  
+  .dropdown-link p {
+    font-size: 0.8rem;
+    color: var(--medium-grey);
+  }
+
+  .hamburger {
+    display: none;
+    padding: 0.1rem;
+    margin-left: 1rem;
+    font-size: 1.9rem;
+    color: var(--primary-text);
+    background-color: transparent;
+    border: none;
+  }
+
+  @media (max-width: 1100px) {
+    .hamburger {
+        display: block;
+        position: relative;
+        left: calc(100vw -9rem);
+    }
+    
+    .container {
+        padding: 1.2rem;
+        margin-right: 3rem;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 87px;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+      }
+    
+      .menu-bar li:first-child ul:nth-child(1) {
+        border-right: none;
+      }
+    
+      .dropdown {
+        display: none;
+        min-width: 100%;
+        border: none !important;
+        border-radius: 5px;
+        position: static;
+        top: 0;
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        box-shadow: none;
+      }
+    
+      .menu.show,
+      .dropdown.active {
+        display: block;
+      }
+    
+      .dropdown ul {
+        padding-left: 0.3rem;
+      }
+    
+      .menu-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        row-gap: 1rem;
+        padding: 1rem;
+      }
+    
+      .menu-bar .nav-link {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin: 0;
+      }
+    
+      .menu-bar > li:not(:last-child) {
+        padding-bottom: 0.5rem;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .right-container {
+        display: none;
+      }
+    }
+
+/* End of Navbar Styling */
+
+/* Start of Hero Section Styling */
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  column-gap: 2rem;
+}
+
+.hero-text {
+  width: 100%;
+  color: var(--primary-text);
+  float: left;
+}
+
+h1 {
+  font-size: 56px;
+}
+
+.contact-button {
+  border: 2px solid #F8F8F7;
+  background: #FC6601;
+  box-shadow: -4px 4px 0px 0px #000;
+  display: flex;
+  margin-top: 20px;
+  padding: 16px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--background);
+}
+
+.hero-image > img {
+  width: 544px;
+  height: 411px;
+  flex-shrink: 0;
+}
+
+.hero-image {
+  width: 50%;
+  height: 50%;
+  float: right;
+}
+
+.header-para {
+  color: var(--background);
+  padding-top: 10px;
+}
+
+.find-out-more {
+  height: auto;
+  position: absolute;
+  left: 50%;
+  bottom: 470px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 1100px) {
+  .hero-image {
+    visibility: hidden;
+  }
+  .hero-text {
+    width: 100vw;
+  }
+}
+
+/* End of Hero Section Styling */
+
+/* Start of About Me Section Styling */
+
+.about-me {
+  text-align: center;
+  text-decoration: underline;
+  color: var(--primary-color);
+  line-height: normal;
+  padding-top: 10px;
+}
+
+.about-me h2 {
+  color: var(--primary-color);
+}
+
+.portfolio-image {
+  flex-shrink: 0;
+  background: #D9D9D9;
+  display: flex;
+  float: left;
+  margin-top: 15px;
+}
+
+.about-me-text {
+  width: 50%;
+  float: right;
+  display: flex;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+.about-me-text > p {
+  display: inline-block;
+  color: var(--primary-color);
+}
+
+/* End of About Me Section Styling */
+
+/* Start of What I Can Do Section Styling */
+
+.wcid-container {
+  height: auto;
+  flex-shrink: 0;
+  background: var(--primary-container);
+  border-radius: 30px 30px;
+}
+
+.what-text {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.wcid-subjects {
+  display: inline-block;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.wordpress, .custom-code {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  width: 40%;
+  height: auto;
+}
+
+.wordpress {
+  float: left;
+}
+
+.custom-code {
+  float: right;
+}
+
+.wordpress h3, .custom-code h3 {
+  text-align: center;
+  font-size: 32px;
+}
+
+.wcid-title > i {
+  left: 50%;
+  display: block;
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 50px;
+}
+
+.wcid-description {
+  margin: 30px;
+}
+
+/* End of What I Can Do Section Styling */
+
+/* Start of What to Expect Section Styling */
+
+.wte-title, .wte-para {
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.wte-title {
+  text-decoration: underline;
+}
+
+.stages-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stages {
+  border-radius: 20px;
+  width: 30%;
+  background: var(--primary-container);
+  margin-top: 20px;
+}
+
+.stage-title {
+  text-align: center;
+  margin-top: 15px;
+  display: flex;
+  position: relative;
+  left: 50%;
+}
+
+.stage-title > i {
+  display: block;
+  font-size: 30px;
+}
+
+.stage-description {
+  margin: 30px;
+}
+
+.design:before, .build:before, .handover:before {
+  position: absolute;
+  font-family: 'FontAwesome';
+  font-size: 70px;
+  color: var(--primary-text);
+  opacity: .3;
+  margin: 10px 0 0 10px;
+}
+
+.design:before {
+  content: "\f53f";
+}
+
+.build:before {
+  content: "\f5fc";
+}
+
+.handover:before {
+  content: "\f00c";
+}
+
+
+/* End of What to Expect Section Styling */
