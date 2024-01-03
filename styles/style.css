@@ -2,7 +2,7 @@
     --text-color: #010101;
     --background: #f8f8f7;
     color: #767676;
-    color: #bcbcbb;
+    --secondary-background: linear-gradient(180deg, #7e4d30 0%, #af7655 100%);
     --primary-color: #44195e;
     --primary-text: #fc6601;
     color: #ef955d;
@@ -395,6 +395,7 @@ h1 {
   border-radius: 10px;
   width: 40%;
   height: auto;
+  background: var(--secondary-background);
 }
 
 .wordpress {
@@ -416,6 +417,10 @@ h1 {
   text-decoration: none;
   padding: 10px 0;
   font-size: 50px;
+}
+
+.wcid-title, .wcid-description {
+  color: var(--background);
 }
 
 .wcid-description {
@@ -487,3 +492,111 @@ h1 {
 
 
 /* End of What to Expect Section Styling */
+
+/* Start of Testimonials Section Styling */
+
+.testimonials-container {
+  height: auto;
+  flex-shrink: 0;
+  background: var(--primary-container);
+  border-radius: 30px;
+}
+
+.test-name {
+  font-size: 25px;
+}
+
+.test-title {
+  text-decoration: underline;
+  text-align: center;
+}
+
+.test-description {
+  color: var(--primary-text);
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.test-container {
+  display: flex;
+}
+
+.test-name, .workplace, .testimonial {
+  padding: 0 20px;
+}
+
+.test-1, .test-2 {
+  background: var(--secondary-background);
+  height: auto;
+  border-radius: 30px;
+  margin: 10px;
+}
+
+.left-chevron, .right-chevron {
+  color: var(--primary-text);
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* End of Testimonials Section Styling */
+
+/* Start of Contact Section Styling */
+
+.contact-title, .contact-description {
+  text-align: center;
+}
+
+.contact-title {
+  text-decoration: underline;
+}
+
+.contact-description {
+  color: var(--primary-text);
+}
+
+form {
+  margin: 0 auto;
+  width: 600px;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  display: inherit;
+  text-align: center;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}
+
+input, textarea {
+  font: 1em 'Roboto Slab';
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+  border-color: #000;
+}
+
+textarea {
+  vertical-align: top;
+  height: 5em;
+}
+
+.submit-button {
+  padding-left: 90px;
+}
+
+.submit-button > button {
+  margin-left: 0.5em;
+}
+
+/* End of Contact Section Styling */
